@@ -14,7 +14,7 @@ module.exports = {
     // chatbot on/off
   
     SESSION_ID: process.env.SESSION_ID || "TERMUX~MD~YOUR_SESSION_KEY",  
-    // Mets ici ton vrai SESSION_ID (généré via https://meg-lodon-session.onrender.com)
+    // Mets ici ton vrai SESSION_ID (généré via https://meg-lodon-session-1.onrender.com/pair)
     
     PREFIX: getConfig("PREFIX") || ".",  
     // Préfixe des commandes (ex: ., !, ?)

@@ -1,46 +1,32 @@
+name: Node.js CI
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  generate-session:
+  build:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: |
-          nohup node generateSession.js > session.log 2>&1 &
-      - run: |
-          echo "Veuillez scanner le QR code sur http://localhost:3000/pair"
-          sleep 180
-      - run: cat session.log
-
-  deploy:
-    needs: generate-session
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
-      - run: npm install
-      - run: |
-          npm install -g pm2
-          if pm2 describe TERMUX-MD > /dev/null; then
-            pm2 restart TERMUX-MD
-          else
-            pm2 start index.js --name TERMUX-MD
-          fi
-          pm2 save
-    env:
-      SESSION_ID: ${{ secrets.SESSION_ID }}
+          node-version: ${{ matrix.node-version }}
 
+      - name: Install dependencies
+        run: npm install
 
-
-
- 
+      - name: Start application
+        run: npm start

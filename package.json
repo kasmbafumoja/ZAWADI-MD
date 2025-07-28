@@ -1,12 +1,12 @@
 {
-"name": "MEGALODON-MD",
+  "name": "TERMUX-MD",
   "version": "1.0.0",
-  "description": "A WhatsApp Bot Created By DybyTech",
+  "description": "Bot WhatsApp officiel créé par Kas Mbafumoja 🇨🇩",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name MEGALODON-MD",
-    "stop": "pm2 stop MEGALODON-MD",
-    "restart": "pm2 restart MEGALODON-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name TERMUX-MD",
+    "stop": "pm2 stop TERMUX-MD",
+    "restart": "pm2 restart TERMUX-MD"
   },
   "dependencies": {
     "baileys": "npm:baileys-pro@0.0.5",
@@ -62,5 +62,7 @@
     "wa-sticker-formatter": "^4.4.4",
     "wa_set_pkg": "1.0.5",
     "yt-search": "2.11.1"
-  }
+  },
+  "author": "Kas Mbafumoja",
+  "license": "MIT"
 }

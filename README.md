@@ -1,4 +1,4 @@
-# 🔰 **TERMUX-MD** 🔰
+## 🔰 **TERMUX-MD** 🔰
 
 <p align="center" style="font-family: monospace; font-weight: bold; font-size: 30px;">
   <span style="color: #FF6347;">T</span>
@@ -25,6 +25,18 @@ Pour toute aide ou support, contactez-moi sur WhatsApp :
 [![WhatsApp](https://img.shields.io/badge/Whatsapp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/243970639878?text=*Salut+Kas+Mbafumoja+,+j%27ai+besoin+d%27aide+concernant+le+bot+TERMUX-MD*)
 
 ---
+
+## 🔗 [![Site TERMUX-MD](https://img.shields.io/badge/TERMUX--MD_Session-Blue?style=for-the-badge&logo=web&logoColor=white&color=0078D7)](https://meg-lodon-session.onrender.com)
+
+<div style="text-align:center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 20px;">
+  <p style="font-size: 1.2em; color: #007BFF; font-weight: bold;">
+    Cliquez ici pour générer votre code <span style="color:#1BAFBA;">Pair</span> et connecter WhatsApp.
+  </p>
+  <p style="font-size: 1em; margin-top: 10px; color: #444;">
+    Ce bot est créé par <span style="font-weight: bold; color: #FF6347;">Kasereka Mbafumoja</span>, le développeur officiel de <span style="font-style: italic; color: #1BAFBA;">TERMUX-MD</span>.
+  </p>
+</div>
+
 
 ## 🪀 Chaîne WhatsApp officielle  
 Restez à jour avec toutes les nouveautés TERMUX-MD :  

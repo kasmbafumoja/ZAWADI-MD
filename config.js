@@ -11,65 +11,78 @@ function convertToBool(text, fault = 'true') {
 module.exports = {
     // ===== BOT CORE SETTINGS =====
     CHATBOT: getConfig("CHATBOT") || "on",
-    // chatbot on/off
+    //chatbot on/off
   
-    SESSION_ID: process.env.SESSION_ID || "MEGALODON~MD~u9IWFAiQ#UcwGU25sl-qECkn1jGc1LtWedtdTkfbQf_XwGtMboBM",  
-    // Mets ici ton vrai SESSION_ID (généré via https://meg-lodon-session-1.onrender.com/pair)
+    SESSION_ID: process.env.SESSION_ID || "MEGALODON~MD~u9IWFAiQ#UcwGU25sl-qECkn1jGc1LtWedtdTkfbQf_XwGtMboBM",  // Your bot's session ID (keep it secure)
     
-    PREFIX: getConfig("PREFIX") || ".",  
-    // Préfixe des commandes (ex: ., !, ?)
-
-    BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "MEGALODON-MD",  
-    // Nom affiché du bot
-
-    MODE: process.env.MODE || "public",        
-    // Mode du bot: public / private / group / inbox
+    PREFIX: getConfig("PREFIX") || ".",  // Command prefix (e.g., "., / ! * - +")
+    
+    BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "Malume-MD",  // Bot's display name
+    
+    MODE: process.env.MODE || "public",        // Bot mode: public/private/group/inbox
 
     // ===== OWNER & DEVELOPER SETTINGS =====
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "243970639878",  
-    // Ton numéro WhatsApp
-
-    OWNER_NAME: process.env.OWNER_NAME || getConfig("OWNER_NAME") || "Kas Mbafumoja",           
-    // Ton nom complet
-
-    DEV: process.env.DEV || "243970639878",                     
-    // Ton numéro pour les messages développeur
-
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "255626986627",  // Owner's WhatsApp number
+    
+    OWNER_NAME: process.env.OWNER_NAME || getConfig("OWNER_NAME") || "malume",           // Owner's name
+    
+    DEV: process.env.DEV || "50948336180",                     // Developer's contact number
+    
     // ===== AUTO-RESPONSE SETTINGS =====
-    AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
-    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*👀 Vu par TERMUX-MD 🇨🇩*",  
-    READ_MESSAGE: process.env.READ_MESSAGE || "true",
+    
+    AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",// Reply to status updates?
+    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*MEGALODON BOT VIEWED YOUR STATUS 🤖*",  // Status reply message
+    READ_MESSAGE: process.env.READ_MESSAGE || "false",          // Mark messages as read automatically?
 
     // ===== REACTION & STICKER SETTINGS =====
-    AUTO_REACT: process.env.AUTO_REACT || "false",
-    CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
-    CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🩹,❤️,🧡,💛,💚,💙,💜,🤎,🖤,🤍",
-    STICKER_NAME: process.env.STICKER_NAME || "TERMUX-MD",
-
+    AUTO_REACT: process.env.AUTO_REACT || "false",              // Auto-react to messages?
+    
+    CUSTOM_REACT: process.env.CUSTOM_REACT || "false",          // Use custom emoji reactions?
+    
+    CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🩹,❤️,🧡,💛,💚,💙,💜,🤎,🖤,🤍",  // Custom reaction emojis
+    
+    STICKER_NAME: process.env.STICKER_NAME || "MEGALODON-MD",     // Sticker pack name
+   
+    
     // ===== MEDIA & AUTOMATION =====
-    AUTO_RECORDING: process.env.AUTO_RECORDING || "false",
-    AUTO_TYPING: process.env.AUTO_TYPING || "false",
-    MENU_IMAGE_URL: getConfig("MENU_IMAGE_URL") || "https://files.catbox.moe/c60vw0.jpg",
+    AUTO_RECORDING: process.env.AUTO_RECORDING || "false",      // Auto-record voice notes?
+    AUTO_TYPING: process.env.AUTO_TYPING || "true",            // Show typing indicator?
+    MENU_IMAGE_URL: getConfig("MENU_IMAGE_URL") || "https://files.catbox.moe/roubzi.jpg",  // Bot's "alive" image
 
     // ===== SECURITY & ANTI-FEATURES =====
     ANTI_BOT: process.env.ANTI_BOT || "true",
+    //antibot true or false
     ANTI_DELETE: process.env.ANTI_DELETE || "true",
     ANTI_CALL: process.env.ANTI_CALL || "true",
-    ANTI_BAD: process.env.ANTI_BAD || "false",
-    ANTI_LINK_KICK: process.env.ANTILINK_KICK || "true",
-    ANTIVIEW_ONCE: process.env.ANTIVIEW_ONCE || "true",
-    ANTILINK_WARN: process.env.ANTILINK_WARN || "true",
-    ANTILINK: process.env.ANTILINK || "true",
-    ANTI_VV: process.env.ANTI_VV || "true",
-    DELETE_LINKS: process.env.DELETE_LINKS || "true",
-    ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "inbox",
+    ANTI_BAD: process.env.ANTI_BAD || "false",                  // Block bad words?
+    ANTI_LINK_KICK: process.env.ANTILINK_KICK || "false",
+// make anti link true,false for groups 
+    ANTIVIEW_ONCE: process.env.ANTIVIEW_ONCE || "false",
+    
+   ANTILINK_WARN: process.env.ANTILINK_WARN || "false",
+    
+     ANTILINK: process.env.ANTILINK || "false",
+    
+    ANTI_VV: process.env.ANTI_VV || "false",  
+    // Block view-once messages?
+    DELETE_LINKS: process.env.DELETE_LINKS || "false",  
+    // Auto-delete links?
+    ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "inbox", 
+    // Log deleted messages (or 'same' to resend)
 
     // ===== BOT BEHAVIOR & APPEARANCE =====
-    PUBLIC_MODE: process.env.PUBLIC_MODE || "true",
-    ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
+   
+    PUBLIC_MODE: process.env.PUBLIC_MODE || "true",     
+    // Allow public commands?
+    ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "true",
+    // Show bot as always online?
     AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
+    // React to status updates?
     AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
-    AUTO_BIO: process.env.AUTO_BIO || "true",
-    WELCOME: process.env.WELCOME || "true",
-    ADMIN_EVENTS: process.env.ADMIN_EVENTS || "true",
+    // VIEW to status updates?
+    AUTO_BIO: process.env.AUTO_BIO || "false",
+    
+    WELCOME: process.env.WELCOME || "false",
+    
+    AMDIN_EVENTS: process.env.ADMIN_EVENTS || "true",
 };

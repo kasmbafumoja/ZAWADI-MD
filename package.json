@@ -1,15 +1,19 @@
 {
-  "name": "TERMUX-MD",
+  "name": "MEGALODON-MD",
   "version": "1.0.0",
-  "description": "Bot WhatsApp officiel créé par Kas Mbafumoja 🇨🇩",
+  "description": "IS THE BEST BOT IN THE UNIVERSE",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.x",
+    "npm": ">=10.x"
+  },
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name TERMUX-MD",
-    "stop": "pm2 stop TERMUX-MD",
-    "restart": "pm2 restart TERMUX-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name MEGALODON-MD",
+    "stop": "pm2 stop MEGALODON-MD",
+    "restart": "pm2 restart MEGALODON-MD"
   },
   "dependencies": {
-    "baileys": "npm:baileys-pro@0.0.5",
+    "baileys": "npm:baileys-pro@latest",
     "axios": "^1.7.9",
     "@adiwajshing/keyed-db": "latest",
     "@dark-yasiya/scrap": "1.0.1",
@@ -62,7 +66,5 @@
     "wa-sticker-formatter": "^4.4.4",
     "wa_set_pkg": "1.0.5",
     "yt-search": "2.11.1"
-  },
-  "author": "Kas Mbafumoja",
-  "license": "MIT"
+  }
 }

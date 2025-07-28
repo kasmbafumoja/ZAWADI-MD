@@ -13,7 +13,7 @@ module.exports = {
     CHATBOT: getConfig("CHATBOT") || "on",
     // chatbot on/off
   
-    SESSION_ID: process.env.SESSION_ID || "TERMUX~MD~YOUR_SESSION_KEY",  
+    SESSION_ID: process.env.SESSION_ID || "MEGALODON~MD~u9IWFAiQ#UcwGU25sl-qECkn1jGc1LtWedtdTkfbQf_XwGtMboBM",  
     // Mets ici ton vrai SESSION_ID (généré via https://meg-lodon-session-1.onrender.com/pair)
     
     PREFIX: getConfig("PREFIX") || ".",  

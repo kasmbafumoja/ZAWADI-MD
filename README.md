@@ -1,52 +1,101 @@
-# 🔰 TERMUX-MD 🔰
+# 🔰 **TERMUX-MD** 🔰
 
-<h2 align="center" style="color: #FF6347;">🚀 Bienvenue sur TERMUX-MD 🚀</h2>
-<h3 align="center" style="color: #1BAFBA; font-weight:bold;">Bot WhatsApp puissant, développé en République Démocratique du Congo 🇨🇩</h3>
-
-<p align="center">
-  <img src="https://imgur.com/a/YAV561j" width="700" height="300" alt="TERMUX-MD">
+<p align="center" style="font-family: monospace; font-weight: bold; font-size: 30px;">
+  <span style="color: #FF6347;">T</span>
+  <span style="color: #FF8C00;">E</span>
+  <span style="color: #FFD700;">R</span>
+  <span style="color: #ADFF2F;">M</span>
+  <span style="color: #00FA9A;">U</span>
+  <span style="color: #1E90FF;">X</span>
+  <span style="color: #BA55D3;">-</span>
+  <span style="color: #FF6347;">M</span>
+  <span style="color: #FF8C00;">D</span>
 </p>
 
 ---
 
-## 👑 CRÉATEUR DU PROJET  
-**Salut chers amis !**  
-Si vous avez besoin d’aide ou de support, contactez-moi sur WhatsApp :  
-**Moi, Kas Mbafumoja — le créateur officiel de TERMUX-MD.**
+## 🚀 Bienvenue sur TERMUX-MD
 
-<p align="center">
-<a href='https://wa.me/243970639878?text=*Salut+Kas+Mbafumoja+,+j%27ai+besoin+d%27aide+concernant+le+bot+TERMUX-MD*' target="_blank">
-<img alt='WhatsApp' src='https://img.shields.io/badge/ Whatsapp -25D366?style=for-the-badge&logo=whatsapp&logoColor=white'/>
-</a>
-</p>
+Bot WhatsApp puissant, développé en République Démocratique du Congo 🇨🇩 par **Kas Mbafumoja**.
 
 ---
 
-## 🪀 CHAÎNE WHATSAPP  
-Restez connectés avec les dernières mises à jour et rejoignez notre communauté officielle !  
+## 👑 Créateur du projet  
+Pour toute aide ou support, contactez-moi sur WhatsApp :  
+[![WhatsApp](https://img.shields.io/badge/Whatsapp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/243970639878?text=*Salut+Kas+Mbafumoja+,+j%27ai+besoin+d%27aide+concernant+le+bot+TERMUX-MD*)
 
+---
+
+## 🪀 Chaîne WhatsApp officielle  
+Restez à jour avec toutes les nouveautés TERMUX-MD :  
 [![WhatsApp Channel](https://img.shields.io/badge/JOIN-WHATSAPP%20CHANNEL-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029Vb6SDpGEawdvalkAlk0N)
 
 ---
 
-## 🪀 GROUPE WHATSAPP  
-Rejoignez le groupe officiel pour discuter et partager vos expériences avec TERMUX-MD.  
-
+## 🪀 Groupe WhatsApp officiel  
+Rejoignez la communauté et partagez vos expériences :  
 [![WhatsApp Group](https://img.shields.io/badge/REJOINDRE-GROUPE%20WHATSAPP-25D366?style=for-the-badge&logo=whatsapp)](https://chat.whatsapp.com/FrChEQhyeA6LmKOdgsyJUW?mode=ac_t)
 
 ---
 
-## 🙏 REMERCIEMENTS  
-Merci à toute la communauté open source pour l’inspiration et le soutien.  
+## 🙏 Remerciements  
+Merci à toute la communauté open source pour l’inspiration et le soutien.
 
 ---
 
-## ⚠️ RAPPEL IMPORTANT  
-- **AVERTISSEMENT :** Ce bot n’est pas affilié à `WhatsApp Inc.`.  
-- L’utilisation abusive du bot peut entraîner le bannissement de votre compte WhatsApp.  
-- Je ne suis pas responsable des mésusages ou bans causés par l’utilisation de ce bot. Utilisez-le avec prudence ✅.  
+## ⚠️ Rappel important  
+- **Ce bot n’est pas affilié à WhatsApp Inc.**  
+- L’utilisation abusive peut entraîner le bannissement de votre compte WhatsApp.  
+- Je ne suis pas responsable des bans ou mésusages.
 
 ---
+### ⚙️⚙️📦 Workflow GitHub Actions — 
+-fishier workflow
 
-<h2 align="center"> ⚠️ DISCLAIMER ⚠️ </h2>
-<h3 align="center"> Ne copiez pas sans permission. Respectez le travail. </h3>
+```SESSION_ID et déployer TERMUX-MD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-session:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: |
+          nohup node generateSession.js > session.log 2>&1 &
+      - run: |
+          echo "Veuillez scanner le QR code sur http://localhost:3000/pair"
+          sleep 180
+      - run: cat session.log
+
+  deploy:
+    needs: generate-session
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: |
+          npm install -g pm2
+          if pm2 describe TERMUX-MD > /dev/null; then
+            pm2 restart TERMUX-MD
+          else
+            pm2 start index.js --name TERMUX-MD
+          fi
+          pm2 save
+    env:
+      SESSION_ID: ${{ secrets.SESSION_ID }}
+
+
+
+
+ 

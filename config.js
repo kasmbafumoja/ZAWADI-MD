@@ -19,7 +19,7 @@ module.exports = {
     PREFIX: getConfig("PREFIX") || ".",  
     // Préfixe des commandes (ex: ., !, ?)
 
-    BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "TERMUX-MD",  
+    BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "MEGALODON-MD",  
     // Nom affiché du bot
 
     MODE: process.env.MODE || "public",        

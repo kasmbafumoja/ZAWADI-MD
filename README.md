@@ -26,7 +26,7 @@ Pour toute aide ou support, contactez-moi sur WhatsApp :
 
 ---
 
-## 🔗 [![Site TERMUX-MD](https://img.shields.io/badge/TERMUX--MD_Session-Blue?style=for-the-badge&logo=web&logoColor=white&color=0078D7)](https://meg-lodon-session.onrender.com)
+## 🔗 [![Site TERMUX-MD](https://img.shields.io/badge/TERMUX--MD_Session-Blue?style=for-the-badge&logo=web&logoColor=white&color=0078D7)](https://meg-lodon-session-1.onrender.com/pair)
 
 <div style="text-align:center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 20px;">
   <p style="font-size: 1.2em; color: #007BFF; font-weight: bold;">

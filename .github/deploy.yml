@@ -1,0 +1,46 @@
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-session:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: |
+          nohup node generateSession.js > session.log 2>&1 &
+      - run: |
+          echo "Veuillez scanner le QR code sur http://localhost:3000/pair"
+          sleep 180
+      - run: cat session.log
+
+  deploy:
+    needs: generate-session
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: |
+          npm install -g pm2
+          if pm2 describe TERMUX-MD > /dev/null; then
+            pm2 restart TERMUX-MD
+          else
+            pm2 start index.js --name TERMUX-MD
+          fi
+          pm2 save
+    env:
+      SESSION_ID: ${{ secrets.SESSION_ID }}
+
+
+
+
+ 
